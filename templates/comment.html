@@ -1,0 +1,9 @@
+{% extends "header.html" %}
+
+{% block content %}
+    <div class="row">
+        <h3> <small>{{ comment.author }} at {{ comment.created_at }}</small></h3>
+        <p>{{ comment.comment }}</p>
+        <div class="error">{{error}}</div>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="post-header">
+        <a href="/{{ post.key().id() }}">
+            <h1 class="text-upper ">
+                {{ post.title }}
+            </h1>
+        </a>
+        <div class="row">
+            {% include "postButtons.html" %}
+        </div>
+
+
+    </div>
+
+    <h3> <small> {{ post.author }} | {{post.created.strftime("%b %d, %Y")}} </small></h3>
+
+    <p>{{post._render_text | safe}}</p>
+
+
+    {% include "newComment.html" %}
+    {% include "renderComments.html" %}
+    </div>
+</div>
+

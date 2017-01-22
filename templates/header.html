@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Supreme Blog</title>
+</head>
+<body>
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/">SUPREME BLOG</a>
+            </div>
+            <div class="navbar-nav nav navbar-right">
+                {% if user %}
+                    <button type="button" class="btn btn-default navbar-btn"><a href="/new-post">New Post</a></button>
+                    <button type="button" class="btn btn-default navbar-btn"><a href="/logout"> Logout </a></button>
+                {% else %}
+                    <button type="button" class="btn btn-default navbar-btn"><a href="/signup">Sign Up</a></button>
+                    <button type="button" class="btn btn-default navbar-btn"><a href="/login"> Sign In </a></button>
+                {% endif %}
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
